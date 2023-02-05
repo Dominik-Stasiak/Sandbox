@@ -6,27 +6,27 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Writer {
-    String filePath;
-    Boolean append = true;
-    public Writer(String filePath, Boolean append){
-        this.filePath = filePath;
+    private final File file;
+    private Boolean append = true;
+
+    public Writer(File file, Boolean append) {
+        this.file = file;
         this.append = append;
     }
 
-    public Writer(String filePath){
-        this.filePath = filePath;
+    public Writer(File file) {
+        this.file = file;
     }
 
-    public void write(String textToWrite){
-        try{
-            File file = new File(filePath);
+    public void write(String textToWrite) {
+        try {
             if (file.exists()) {
                 FileWriter fileWriter = new FileWriter(file, append);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
                 if (file.length() == 0) {
                     bufferedWriter.write(textToWrite);
                 } else {
-                    bufferedWriter.write("\n"+textToWrite);
+                    bufferedWriter.write("\n" + textToWrite);
                 }
                 bufferedWriter.close();
                 fileWriter.close();
@@ -38,7 +38,7 @@ public class Writer {
             } else {
                 System.out.println("File doesn't exists");
             }
-        }catch (IOException exception){
+        } catch (IOException exception) {
             exception.printStackTrace();
         }
     }
