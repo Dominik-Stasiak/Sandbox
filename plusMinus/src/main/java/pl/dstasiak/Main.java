@@ -17,7 +17,9 @@ public class Main {
                 .map(Integer::parseInt)
                 .collect(toList());
 
+        System.out.println("Ratio of positive / negative / zeros numbers in array : \n");
         Ratio.plusMinus(arr);
+        System.out.println("\nMinimum and maximum of 4 numbers in array : \n");
         MinMaxSum.miniMaxSum(arr);
 
         bufferedReader.close();
