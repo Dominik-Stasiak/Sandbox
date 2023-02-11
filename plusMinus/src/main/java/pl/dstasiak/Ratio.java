@@ -2,7 +2,7 @@ package pl.dstasiak;
 
 import java.util.*;
 
-class Result {
+class Ratio {
     public static void plusMinus(List<Integer> arr) {
         int s = arr.size();
         double n = 0d, p = 0d, z = 0d;
