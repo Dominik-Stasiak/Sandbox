@@ -3,7 +3,7 @@
 ##
 &nbsp;
 
--  🥇 Spring boot with react app for add student
+-  Small apps, testing features, learning etc..
 
 ##
 &nbsp;
